@@ -12,7 +12,9 @@ def I():    return int(sys.stdin.readline().strip())
 def F():    return float(sys.stdin.readline().strip())
 def S():    return sys.stdin.readline().strip()
 def debug(*args):   print(*args, file=sys.stderr)
+
 # python -m unittest discover -v
+
 def math_utilities():
     n = 123.456789
     debug(abs(n)) # 123.456789
@@ -23,6 +25,7 @@ def math_utilities():
     debug(round(n, 2)) # 123.46
     debug(round(n, -1)) # 120.0
     debug(round(n, -2)) # 100.0
+
 
 def collections_utilities():
     deq = collections.deque([1, 2, 3, 4, 5])
@@ -62,6 +65,7 @@ def collections_utilities():
     d = dict.fromkeys(['a', 'b', 'c'], 0)
     debug(type(d), d) # <class 'dict'> {'a': 0, 'b': 0, 'c': 0}
 
+
 def priority_queue_example():
     pq = queue.PriorityQueue() # Min heap, first attends lowest priority
     pq.put((2, 'code'))
@@ -75,6 +79,7 @@ def priority_queue_example():
         #Priority Queue item: (2, 'code')
         #Priority Queue item: (3, 'sleep')
 
+
 def heapq_priority_queue_example():
     heap = [] # Min heap, first attends lowest priority
     heapq.heappush(heap, (2, 'code'))
@@ -87,6 +92,7 @@ def heapq_priority_queue_example():
         #Priority: 1, Task: eat len(heap): 2)
         #Priority: 2, Task: code len(heap): 1)
         #Priority: 3, Task: sleep len(heap): 0)
+
 
 def string_utilities_example():
     example_string = "  Hello, World! Let's explore World Python string utilities.  "
@@ -119,16 +125,6 @@ def string_utilities_example():
     debug('Is digit:', "ab123".isdigit(), "938745983745".isdigit())
 
 
-
-
-
-
-
-
-
-
-
-
 def array_module_example():
     int_array = array.array('i', [1, 2, 3, 4, 5, 3, 4, 3])
     float_array = array.array('d', [1.0, 2.0, 3.0, 4.0, 5.0])
@@ -145,7 +141,8 @@ def array_module_example():
     int_list = int_array.tolist()
     debug('Array to list:', int_list) # Array to list: [1, 2, 4, 5, 3, 4, 3, 6, 7, 8, 9]
     debug('Count occurrences of 4:', int_array.count(4)) # Count occurrences of 4: 2
-    
+
+
 def string_module_example():
     debug('Digits:', string.digits)  # '0123456789'
     debug('Ascii letters:', string.ascii_letters)  # abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ
@@ -192,10 +189,6 @@ def tda_example():
     debug(m) # {5(X): 5, 3(A): 1, 44(BB): 1, 444(XXXX): 1, 4(B): 1}
 
 
-
-
-
-
 def sorting():
     names_with_scores = [('Alice', 9.5), ('Bob', 8.7), ('Charlie', 9.7), ('Diana', 9.5)]
     # Sort by the score in descending order, and then by name in ascending order
@@ -215,7 +208,7 @@ def multidimensional_arrays():
     adj_list = m = [[] for _ in range(rows)]
     debug(adj_list) # [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]
     depth, rows, cols = 2, 3, 4
-    m3d = [[[0 for _ in range(cols)] for _ in range(rows)] for __ in range(depth)]
+    m3d = [[[0 for _ in range(cols)] for _ in range(rows)] for _ in range(depth)]
     debug(m3d)
     #[[[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]]]
 
@@ -251,16 +244,6 @@ def itertools_examples():
     count = itertools.count(start=10, step=2)
     debug('Count start at 10 step 2:', [next(count) for _ in range(5)])
     # Count start at 10 step 2: [10, 12, 14, 16, 18]
-    
-
-
-
-
-
-
-
-
-
 
 
 def functools_examples():
@@ -315,19 +298,6 @@ def random_examples():
     to_choose = 4 
     debug(f'Sample {to_choose} without replacement:', random.sample(population, to_choose))
     #Sample 4 without replacement: [14, 16, 2, 4]
-    
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def re_examples():
@@ -380,21 +350,6 @@ def json_examples():
     python_object = json.loads(json_string)
     debug(type(python_object)) # <class 'dict'>
     debug('Python object:', python_object)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 def datetime_examples():
@@ -454,16 +409,7 @@ def datetime_examples():
     debug('Time until New Year:', time_until_new_year)
     #Time until New Year: 53 days, 7:31:47.697546
 
-    
 
-
-
-
-
-
-
-
-    
 def bisect_examples():
     sorted_list = [1, 3, 4, 4, 5]
     left_position = bisect.bisect_left(sorted_list, 4) # Bisect left position (4): 2
@@ -517,20 +463,6 @@ def dataclass_uses():
     # Player(name='Jane Smith', team='Free Agent', id=5678): 'Forward'}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def string_utilities_examples():
     debug("HELLO".lower() == "hello".lower())
     str_var = "    Hello world    "
@@ -578,8 +510,7 @@ def string_utilities_examples():
     l = list(s)
     debug(type(l), l)
 
-    from collections import Counter
-    c = Counter(a)
+    c = collections.Counter(a)
     debug(type(c), c) 
     # <class 'collections.Counter'> Counter({3: 4, 4: 4, 1: 4, 2: 3, -3: 1, -2: 1})
     for k in c:
@@ -638,7 +569,6 @@ def string_utilities_examples():
         debug("Before:", line, "After:", line_new)
         # Before: 0123456789abcdefg After: 0123456789ab
 
-
     prefix = "01234"
     if line.startswith(prefix):
         line_new = line[len(prefix):]
@@ -652,17 +582,6 @@ def string_utilities_examples():
         index = line.index("xxx")
     except ValueError:
         debug("substring not found")
-
-
-
-
-
-
-
-
-
-
-
 
 
 def lambda_examples():
@@ -724,15 +643,59 @@ def flow_control():
     else: 
         debug("fruit isn't Banana, Mango or Grapes")
 
+def queue_examples():
+    q = queue.Queue()
+    q.put('item1')
+    q.put('item2')
+    q.put('item3')
+    first_item = q.get() # Remove and return an item from the queue
+    debug(f"First item removed from the queue: {first_item}. size: {q.qsize()}")
+    debug(f"Is the queue empty? {q.empty()}")
+    debug(f"Number of items in the queue: {q.qsize()}")
+
+def stack_examples():
+    stack = [] # Creating a stack using a list
+    stack.append('item1')
+    stack.append('item2')
+    stack.append('item3')
+    last_item = stack.pop()  # Remove and return the top item of the stack
+    debug(f"Last item removed from the stack: {last_item}. Size: {len(stack)}")
+    is_empty = not stack
+    debug(f"Is the stack empty? {is_empty}")
+    debug(f"Number of items in the stack: { len(stack)}")
 
 
+def set_examples():
+    my_set = set()
+    my_set.add(4)
+    debug(f"Set after adding an item: {my_set}")
+    my_set.update([5, 6, 7])
+    debug(f"Set after adding multiple items: {my_set}")
+    
+    # Removing an item from the set (will raise a KeyError if the item does not exist)
+    my_set.discard(1)  # Discard is safer than remove, as it won't raise an error if the item is not found
+    debug(f"Set after removing an item: {my_set}")
+    is_present = 4 in my_set
+    debug(f"Is 4 in the set? {is_present}")
+    size = len(my_set)
+    debug(f"Number of items in the set: {size}")
+    another_set = {4, 5, 6, 7, 8}
+    union = my_set | another_set
+    debug(f"Union of the two sets: {union}")
+    intersection = my_set & another_set
+    debug(f"Intersection of the two sets: {intersection}")
+    difference = my_set - another_set
+    debug(f"Difference of the two sets: {difference}")
+    symmetric_difference = my_set ^ another_set
+    debug(f"Symmetric difference of the two sets: {symmetric_difference}")
+    is_subset = {4, 5} <= my_set
+    debug(f"Is { {4, 5} } a subset of {my_set}? {is_subset}")
+    is_superset = my_set >= {4, 5}
+    debug(f"Is {my_set} a superset of { {4, 5} }? {is_superset}")
+    
 
 
-
-
-
-
-def main():
+def test_read():
     test_count = I()
     for test_case in range(test_count):
         debug("Test " + str(test_case + 1) + ":")
@@ -751,6 +714,11 @@ def main():
                 print(word)
         debug("End case ", test_case + 1, "\n")
         print("End case ", test_case + 1, "\n")
+
+
+def main():
+    #To test reading un comment next line:
+    test_read()
     debug("\nmath_utilities")
     math_utilities()
     debug("\ncollections_utilities")
@@ -795,18 +763,13 @@ def main():
     pprint_example()
     debug("\nflow_control")
     flow_control()
-
-
+    debug("\nqueue_example")
+    queue_examples()
+    debug("\nstack_example")
+    stack_examples()
+    debug("\nset_examples")
+    set_examples()
 
 
 if __name__ == "__main__":
     main()
-# 2
-# 2 4
-# this is a line
-# this is another line
-# 4 7
-# this is a longer line of text
-# this is another longer line of texts
-# 2this i2s 22a lo2nger l2ine o2f text2
-# 2this 2is a2nother l2onger lin2e 22of t2exts
